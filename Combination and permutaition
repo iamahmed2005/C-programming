@@ -1,0 +1,34 @@
+#include<stdio.h> 
+
+int fact(int x){
+    int fact = 1;
+    for (int i = 1; i <= x; i++)
+    {
+        fact = fact * i;
+    }
+    return fact;
+}
+
+int main() {
+
+    // Combination and permutation --> nCr = n! / r! * (n-r)!  [! = factorial]
+
+    int n, r;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    printf("Enter r: ");
+    scanf("%d", &r);
+    
+    int nfact = fact(n);  // factorial of n
+    int rfact = fact(r);  // factorial of r
+    int nrfact = fact(n-r);  // factorial of (n-r)
+    printf("nCr is: %d \n", nfact / (rfact * nrfact));
+
+                    // OR 
+
+    int ncr = factorial(n) / (factorial(r) * factorial(n-r));
+    printf("nCr is: %d", ncr);
+
+
+   return 0;
+}
